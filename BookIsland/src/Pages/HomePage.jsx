@@ -1,0 +1,1 @@
+// landing page in 1 sec. go on to Login page
