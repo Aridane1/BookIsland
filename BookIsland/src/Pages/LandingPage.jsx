@@ -3,15 +3,18 @@ import logo from '../assets/Logos/Logo3.svg'
 import { useEffect } from 'react';
 
 export const LandingPage = () => {
- const navigate = useNavigate()
+  const navigate = useNavigate()
     // Navigating to homepage after 2 seconds
    useEffect(() => {
-   
-     setInterval(() => {
+
+    const stopIntaval = setInterval(() => {
        console.log("Landing")
        navigate("/login")
 
       }, 2000);
+      return () => {
+        clearInterval(stopIntaval)
+      }
     },[]);
 
   return (
