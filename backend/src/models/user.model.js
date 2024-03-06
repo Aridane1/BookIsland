@@ -1,4 +1,4 @@
-export default function createUsertModel(sequelize, Sequelize) {
+export default function createUserModel(sequelize, Sequelize) {
   const User = sequelize.define("user", {
     username: {
       type: Sequelize.STRING,
