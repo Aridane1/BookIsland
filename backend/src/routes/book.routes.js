@@ -6,13 +6,14 @@ import {
   updateBook,
   findOneBook,
 } from "../controllers/book.controller.js";
+import { multerUltis } from "../middlewares/multerUtlis.middleware.js";
 
 const router = Router();
 
 router.get("/", findAllBook);
 router.get("/:bookId", findOneBook);
-router.post("/", upload.single('file'), createBook);
-router.put("/:bookId", upload.single('file'), updateBook);
+router.post("/", multerUltis.single("file"), createBook);
+router.put("/:bookId", multerUltis.single("file"), updateBook);
 router.delete("/:bookId", deleteOneBook);
 
 export default router;

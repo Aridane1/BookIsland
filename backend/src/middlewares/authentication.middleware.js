@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
 import { generateToken, getCleanUser } from "../utils/jwtUtils.js";
-import { JWT_SECRET } from "../config/envConfig.js";
+import { JWT_SECRET } from "../config/env.config.js";
 import { db } from "../models/index.js";
 
 const User = db.User;

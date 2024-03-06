@@ -1,4 +1,5 @@
 import express from "express";
+import { exec } from "child_process";
 import cors from "cors";
 import morgan from "morgan";
 import { db } from "../models/index.js";
@@ -26,7 +27,19 @@ app.use("/api/user", userRouter);
 app.use("/api/book", bookRouter);
 app.use("/api/transfer", transferRouter);
 
-
 db.sequelize.sync();
+// db.sequelize.sync({ force: true }).then(() => {
+//   exec("sequelize db:seed:all", (error, stdout, stderr) => {
+//     if (error) {
+//       console.error(`Error al ejecutar los seeders: ${error.message}`);
+//       return;
+//     }
+//     if (stderr) {
+//       console.error(`stderr: ${stderr}`);
+//       return;
+//     }
+//     console.log(`Seeders ejecutados correctamente: ${stdout}`);
+//   });
+// });
 
 export default app;

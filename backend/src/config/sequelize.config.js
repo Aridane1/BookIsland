@@ -1,13 +1,13 @@
 import { Sequelize } from "sequelize";
-import { development } from "./databaseConfig.js";
+import config from "./db.config.js";
 
 export const sequelize = new Sequelize(
-  development.database,
-  development.username,
-  development.password,
+  config.development.database,
+  config.development.username,
+  config.development.password,
   {
-    host: development.host,
-    dialect: development.dialect,
+    host: config.development.host,
+    dialect: config.development.dialect,
     operatorsAliases: false,
     dialectOptions: {
       ssl: {
