@@ -1,4 +1,4 @@
-import { LandingPage } from "./Pages/LandingPage";
+import { AppRouter } from "./Components/Partials/AppRouter/AppRouter";
 import "./index.css";
 
 
@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <LandingPage></LandingPage>
+    <header></header>
+      <AppRouter></AppRouter>
     </>
   )
 }

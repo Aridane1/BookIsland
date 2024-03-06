@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import logo from "../assets/Logos/Logo.svg";
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import logo from '../assets/Logos/Vector.svg'
+import { useEffect } from 'react';
 
-const LandingPage = () => {
-  const [showLandingPage, setShowLandingPage] = useState(true);
+export const LandingPage = () => {
+ const navigate = useNavigate()
+    // Navigating to homepage after 2 seconds
+   useEffect(() => {
+   
+     setInterval(() => {
+       console.log("Landing")
+       navigate("/home")
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      // Navigating to login page after 2 seconds
-      setShowLandingPage(false);
-    }, 2000);
-
-    // stop the timer
-    return () => clearTimeout(timer);
-  }, []);
+      }, 2000);
+    },[]);
 
   return (
-    <div>
-      {showLandingPage ? (
-        <div className="flex justify-center items-center h-screen">
-          <img src={logo} alt="Logo" />
-        </div>
-      ) : (
-        <Redirect to="/login" />
-      )}
-    </div>
-  );
-};
+    <div className="flex justify-center items-center h-screen">
+      <img src={logo} alt="Logo" />
+    </div>  
+     )
+}
 
-export default LandingPage;
