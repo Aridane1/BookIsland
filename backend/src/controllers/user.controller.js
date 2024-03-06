@@ -1,5 +1,8 @@
-import { db } from "../models/index.js";
 import bcrypt from "bcryptjs";
+
+import { db } from "../models/index.js";
+import { generateToken, getCleanUser } from "../utils/jwtUtils.js";
+
 const User = db.User;
 
 export const createUser = async (req, res) => {
@@ -10,7 +13,14 @@ export const createUser = async (req, res) => {
     let existUser = await User.findOne({ where: { email: email } });
 
     if (existUser) {
-      return res.status(409).json({ message: "Email already in use" });
+      const token = generateToken(existUser);
+      const userObj = getCleanUser(existUser);
+
+      return res.status(409).json({
+        message: "Email already in use",
+        user: userObj,
+        access_token: token,
+      });
     }
 
     let user = {
@@ -25,8 +35,12 @@ export const createUser = async (req, res) => {
 
     let newUser = await User.create(user);
 
-    res.status(200).send(newUser);
+    const token = generateToken(newUser);
+    const userObj = getCleanUser(newUser);
+
+    res.status(200).send({ user: userObj, access_token: token });
   } catch (err) {
+    console.log(err);
     res.status(500).send({
       message: "Error creating the user",
     });

@@ -9,5 +9,4 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.User = createUserModel(sequelize, Sequelize);
-
 db.Book = createBookModel(sequelize, Sequelize);
