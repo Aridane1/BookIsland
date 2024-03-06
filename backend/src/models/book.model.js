@@ -1,6 +1,6 @@
 export default function createBookModel(sequelize, Sequelize) {
     const Book = sequelize.define("book", {
-        tittle: {
+        title: {
             type: Sequelize.STRING,
         },
         type: {
@@ -14,6 +14,9 @@ export default function createBookModel(sequelize, Sequelize) {
         },
         author: {
             type: Sequelize.STRING,
+        },
+        userId: {
+            type: Sequelize.INTEGER,
         },
     });
 
