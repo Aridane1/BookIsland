@@ -12,7 +12,7 @@ export const sequelize = new Sequelize(
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false, // Esto evita que Sequelize verifique el certificado SSL (no recomendado en producción)
+        rejectUnauthorized: false,
       },
     },
   }
