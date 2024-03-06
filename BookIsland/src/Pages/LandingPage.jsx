@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/Logos/Vector.svg'
+import logo from '../assets/Logos/Logo3.svg'
 import { useEffect } from 'react';
 
 export const LandingPage = () => {
@@ -9,7 +9,7 @@ export const LandingPage = () => {
    
      setInterval(() => {
        console.log("Landing")
-       navigate("/home")
+       navigate("/login")
 
       }, 2000);
     },[]);

@@ -2,16 +2,16 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 // import { PrivateRoute } from './PrivateRoute'
 
-import { LoginPage } from '../../../Pages/User/LoginPage'
-import { RegisterUserPage } from '../../../Pages/User/RegisterUserPage'
-import { UserPage } from '../../../Pages/User/UserPage'
-import { OverviewChatPage } from '../../../Pages/User/Chat/OverviewChatPage'
-import { SpecificChatPage } from '../../../Pages/User/Chat/SpecificChatPage'
-import { AboutPage } from '../../../Pages/AboutPage'
-import { FAQPage } from '../../../Pages/FAQPage'
-import { HomePage } from "../../../Pages/HomePage"
-import { LandingPage } from '../../../Pages/LandingPage'
-import { FallbackPage } from '../../../Pages/FallbackPage'
+import { LoginPage } from '../../Pages/User/LoginPage'
+import { RegisterUserPage } from '../../Pages/User/RegisterUserPage'
+import { UserPage } from '../../Pages/User/UserPage'
+import { OverviewChatPage } from '../../Pages/User/Chat/OverviewChatPage'
+import { SpecificChatPage } from '../../Pages/User/Chat/SpecificChatPage'
+import { AboutPage } from '../../Pages/AboutPage'
+import { FAQPage } from '../../Pages/FAQPage'
+import { HomePage } from "../../Pages/HomePage"
+import { LandingPage } from '../../Pages/LandingPage'
+import { FallbackPage } from '../../Pages/FallbackPage'
 
 export const AppRouter = () => {
    return (
