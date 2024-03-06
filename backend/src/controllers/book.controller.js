@@ -3,11 +3,11 @@ const Book = db.Book;
 
 export const createBook = async (req, res) => {
     try {
-        let { tittle, type, edition, date, author } = req.body;
-        if (!tittle || !date || !author) throw new Error("Missing fields");
+        let { title, type, edition, date, author } = req.body;
+        if (!title || !date || !author) throw new Error("Missing fields");
 
         let book = {
-            tittle: tittle,
+            title: title,
             type: type,
             edition: edition,
             date: date,

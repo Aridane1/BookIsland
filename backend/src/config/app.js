@@ -3,6 +3,8 @@ import cors from "cors";
 import morgan from "morgan";
 import { db } from "../models/index.js";
 import userRouter from "../routes/user.routes.js";
+import bookRouter from "../routes/book.routes.js";
+import transferRouter from "../routes/transfer.routes.js";
 
 const app = express();
 
@@ -18,6 +20,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use("/api/user", userRouter);
+app.use("/api/book", bookRouter);
+app.use("/api/transfer", transferRouter);
+
 
 db.sequelize.sync();
 
