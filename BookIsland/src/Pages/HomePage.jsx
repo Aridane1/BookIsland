@@ -1,6 +1,11 @@
+import { Footer } from "../Components/Partials/Footer"
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    
+    <Footer></Footer>
+    
+    </>
   )
 }
