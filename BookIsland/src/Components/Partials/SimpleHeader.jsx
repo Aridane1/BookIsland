@@ -1,5 +1,5 @@
 import "../../../tailwind.config"
-import logo from "../../assets/Logos/Logo4.svg"
+import logo from "../../assets/Logos/light-blue-fill.svg"
 export const SimpleHeader = () => {
   return (
     <header className="h-20 bg-primary" >
