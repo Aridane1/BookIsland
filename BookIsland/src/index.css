@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Indie+Flower&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Podkova:wght@400..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap')
 
 
 *{
@@ -11,6 +11,8 @@
 
 body {
     font-family: "Raleway", sans-serif;
+    height: 100vw;
+
 }
 div {
     /* border: solid 1px black; */
@@ -22,4 +24,31 @@ div {
 #inputField {
     font-family: "Raleway", sans-serif;
     font-size: 22px;
+    display: grid;
+    grid-template-columns: 1fr, 3fr;
 }
+
+#changeText {
+    font-size: 32px;
+    color: #C9EEFA;
+    animation-name: fontChange;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+@keyframes fontChange {
+    0% {
+        font-family: "Raleway", sans-serif;
+    }
+    25% {
+        font-family: "Amatic SC", sans-serif;
+    }
+    50% {
+        font-family: "Indie Flower", cursive;
+    }
+    75% {
+        font-family: "Playfair Display", serif;
+    }
+    100% {
+        font-family: "Podkova", serif;
+    }
+  }

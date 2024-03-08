@@ -10,7 +10,7 @@ import ActiveChat from "../../assets/Icons/ActiveChat.svg"
 
 export const Footer = () => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full h-20 bg-primary flex justify-center items-center" >
+    <nav className="fixed bottom-0 left-0 w-screen h-20 bg-primary flex justify-center items-center" >
         <ul className="flex justify-between w-full mx-8  bg-primary">
             <li className=" bg-primary" >
                 <NavLink 

@@ -5,7 +5,7 @@ import LogOut from "../../assets/Logos/close-round-fill.svg"
 
 export const Header = () => {
   return (
-    <header className=" w-full h-20 bg-primary flex justify-between items-center pl-4" >
+    <header className=" w-screen h-20 bg-primary flex justify-between items-center pl-4" >
         <img 
             src={logo} 
             alt=""
