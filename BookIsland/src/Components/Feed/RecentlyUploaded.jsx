@@ -18,7 +18,7 @@ export const RecentlyUploaded = () => {
 
             </div>
         </div>
-        <hr class="relative w-full h-1 my-8 bg-dark border-0 rounded mt-[32px]"></hr>
+        <hr className="relative w-full h-1 my-8 bg-dark border-0 rounded mt-[32px]"></hr>
     </div>
    
   )

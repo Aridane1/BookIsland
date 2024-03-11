@@ -27,13 +27,18 @@ div {
     display: grid;
     grid-template-columns: 1fr, 3fr;
 }
-
+#BookInputField {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    
+}
 #changeText {
     font-size: 32px;
     color: #C9EEFA;
     animation-name: fontChange;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+
   }
 @keyframes fontChange {
     0% {

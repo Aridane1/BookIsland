@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 
 export const UploadingPicture = () => {
-  const [profileImage, setProfileImage] = useState(null); // Statevariabel til at gemme billedstien
+  const [profileImage, setProfileImage] = useState(null); // State Variable to store the image path
 
-  // Eventhandler til håndtering af billedopload
+  // Event handler for handling image uploads
   const handleImageUpload = (event) => {
-    const file = event.target.files[0]; // Få adgang til den uploadede fil
+    const file = event.target.files[0]; // Access the uploaded file
     const reader = new FileReader();
 
     reader.onloadend = () => {
-      setProfileImage(reader.result); // Opdater statevariablen med stien til det uploadede billede
+      setProfileImage(reader.result); // Update the state variable with the path to the uploaded image
     };
 
     if (file) {
-      reader.readAsDataURL(file); // Læs filen som en data-URL
+      reader.readAsDataURL(file); // Read the file as a data URL
     }
   };
 

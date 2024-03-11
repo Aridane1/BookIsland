@@ -1,0 +1,37 @@
+import React, { useState } from 'react';
+import { Modal } from './AddBookModal';
+import { FaCirclePlus } from "react-icons/fa6";
+import { AddBookContent } from './AddBookContent';
+
+export const AddABook = () => {
+  //Modal to add book
+  const [modalIsOpen, setModalIsOpen] = useState(false); //sets modal to false so it is closed from the start.
+
+  const openModal = () => {
+    //sets modal to true so it opens. 
+    setModalIsOpen(true); 
+  };
+
+  const closeModal = () => {
+    // sets modal to false so it closes. 
+    setModalIsOpen(false); 
+  };
+  return (
+    <div>
+      <div className="flex justify-center items-center">
+        <button
+            onClick={openModal} 
+            className="w-10/12 h-[48px] bg-primary rounded-lg text-light font-bold text-[22px] pr-[20px]">
+            Add a book 
+        </button>
+        <Modal 
+          isOpen={modalIsOpen} 
+          onRequestClose={closeModal}
+          >      
+          <AddBookContent></AddBookContent>{/* Modal content */}
+        </Modal>
+      </div>
+      <FaCirclePlus className="relative -top-[35px] left-[250px] text-light text-[22px]" />
+    </div>
+  )
+}
