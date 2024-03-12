@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Modal } from './AddBookModal';
 import { FaCirclePlus } from "react-icons/fa6";
-import { AddBookContent } from './AddBookContent';
+import closeIcon from "../../../assets/Icons/closeButton.svg"
+import { UploadBookPicture } from "../../Partials/Forms/UploadBook"
 
 export const AddABook = () => {
   //Modal to add book
@@ -27,8 +28,19 @@ export const AddABook = () => {
         <Modal 
           isOpen={modalIsOpen} 
           onRequestClose={closeModal}
-          >      
-          <AddBookContent></AddBookContent>{/* Modal content */}
+          >
+            {/* Modal content */}    
+          <header className=' h-12 bg-primary rounded-lg'>
+            <img 
+              src={closeIcon} 
+              alt="" 
+              onClick={closeModal} 
+              className="relative top-1/2 -translate-y-1/2 left-[90%] text-light text-2xl"/>
+          </header>
+          <main className="bg-light rounded-b-lg -mt-1">
+            <UploadBookPicture></UploadBookPicture>
+          </main>  
+          
         </Modal>
       </div>
       <FaCirclePlus className="relative -top-[35px] left-[250px] text-light text-[22px]" />
