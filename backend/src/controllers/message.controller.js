@@ -19,3 +19,16 @@ export const addManyMessage = async (req, res) => {
     res.status(400).send({ message: "Error adding the messages" });
   }
 };
+
+export const getAllMessagesByChat = async (chatId) => {
+  try {
+    let messages = await Message.findAll({
+      where: {
+        chat_id: chatId,
+      },
+    });
+    return messages;
+  } catch (err) {
+    console.log(err);
+  }
+};

@@ -7,7 +7,7 @@ import { db } from "../models/index.js";
 import userRouter from "../routes/user.routes.js";
 import bookRouter from "../routes/book.routes.js";
 import transferRouter from "../routes/transfer.routes.js";
-import followUserRouter from "../routes/follow-user.routes.js";
+import chatUserRouter from "../routes/chat-user.routes.js";
 
 import verifyToken from "../middlewares/verifyToken.middleware.js";
 
@@ -29,10 +29,10 @@ app.use(morgan("dev"));
 app.use("/api/user", userRouter);
 app.use("/api/book", bookRouter);
 app.use("/api/transfer", transferRouter);
-app.use("/api/follow-user", followUserRouter);
+app.use("/api/chat-user", chatUserRouter);
 
-// db.sequelize.sync();
-db.sequelize.sync({ force: true });
+db.sequelize.sync();
+// db.sequelize.sync({ force: true });
 // .then(() => {
 //   exec("sequelize db:seed:all", (error, stdout, stderr) => {
 //     if (error) {

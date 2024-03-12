@@ -4,11 +4,11 @@ export default function createMessageModel(sequelize, Sequelize) {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    emit_id: {
+    chat_id: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    recep_id: {
+    user_id: {
       type: Sequelize.STRING,
       allowNull: false,
     },
