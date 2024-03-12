@@ -25,8 +25,8 @@ export const AppRouter = () => {
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/faq" element={<FAQPage />}></Route>
-        <Route path="/user" element={<UserPage />}></Route>
-            <Route path="/Overview-chat" element={<OverviewChatPage />}></Route>
+        <Route path="/profile" element={<UserPage />}></Route>
+            <Route path="/chat" element={<OverviewChatPage />}></Route>
             <Route path="/specific-chat" element={<SpecificChatPage />}></Route>
         
         <Route path="*" element={<FallbackPage />}></Route>
