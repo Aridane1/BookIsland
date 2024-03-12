@@ -20,7 +20,8 @@ export const Header = () => {
             <img 
                 src={LogOut} 
                 alt="" 
-                className="bg-primary pl-6 pr-4" 
+                className="bg-primary pl-6 pr-4"
+                // Log Out function is missing
             />
         </div>
     </header>
