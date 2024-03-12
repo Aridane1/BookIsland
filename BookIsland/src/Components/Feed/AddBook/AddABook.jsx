@@ -43,7 +43,7 @@ export const AddABook = () => {
           
         </Modal>
       </div>
-      <FaCirclePlus className="relative -top-[35px] left-[250px] text-light text-[22px]" />
+      <FaCirclePlus className="relative -top-[35px] left-[250px] bg-primary text-light text-[22px]" />
     </div>
   )
 }
