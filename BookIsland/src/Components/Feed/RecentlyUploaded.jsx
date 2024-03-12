@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export const RecentlyUploaded = () => {
   return (
@@ -14,7 +15,7 @@ export const RecentlyUploaded = () => {
                 <p className="py-[24px] text-primary font-bold text-[16px]">uploaded by</p>
                 <h3 className="pb-[24px] text-primary font-bold text-[22px]">username</h3>
             
-                <button className="w-full h-[42px] bg-primary text-light rounded-lg">View</button>
+                <Link to="/ " className="w-full h-[42px] bg-primary text-light rounded-lg">View</Link>
 
             </div>
         </div>
