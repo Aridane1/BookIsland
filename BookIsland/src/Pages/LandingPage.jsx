@@ -19,7 +19,7 @@ export const LandingPage = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <img src={logo} alt="Logo" />
+      <img src={logo} alt="Logo" id="Bounce"/>
     </div>  
      )
 }
