@@ -8,6 +8,8 @@ export default {
 			secondary: "#C9EEFA",
 			dark: "#116077",
 			light: "#F6FEFF",
+			swap: "#FFA800",
+			donate: "#06CC55",
 			error: "#FF0000",
 		},
 		extend: {},

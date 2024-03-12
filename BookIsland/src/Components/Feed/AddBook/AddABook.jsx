@@ -18,11 +18,11 @@ export const AddABook = () => {
     setModalIsOpen(false); 
   };
   return (
-    <div>
+    <div className=" -mt-7">
       <div className="flex justify-center items-center">
         <button
             onClick={openModal} 
-            className="w-10/12 h-[48px] bg-primary rounded-lg text-light font-bold text-[22px] pr-[20px]">
+            className="w-10/12 h-[48px] bg-primary rounded-lg text-light font-bold text-[22px] pr-[20px] ">
             Add a book 
         </button>
         <Modal 
