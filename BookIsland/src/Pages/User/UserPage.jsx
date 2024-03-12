@@ -5,6 +5,7 @@ import { Header } from "../../Components/Partials/Header"
 import TestPorfileImage from "../../assets/Images/EyeCatcher.svg";
 import { UserUploadedBooks } from "../../Components/UserUploadedBooks";
 import { UserPendigBooks } from "../../Components/UserPendigBooks";
+import { UserClosedExhanges } from "../../Components/UserClosedExhanges";
 
 export const UserPage = () => {
   return (
@@ -44,6 +45,7 @@ export const UserPage = () => {
     <AddABook></AddABook>
     <UserUploadedBooks></UserUploadedBooks>   
     <UserPendigBooks></UserPendigBooks> 
+    <UserClosedExhanges></UserClosedExhanges>
     <Footer></Footer>
     </>
   )
