@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/Logos/Light-blue-bagground.svg";
+import logo from "/assets/Logos/Light-blue-bagground.svg";
 import { useEffect } from "react";
 
 export const LandingPage = () => {
