@@ -4,7 +4,7 @@ export default function createBookModel(sequelize, Sequelize) {
       type: Sequelize.STRING,
     },
     type: {
-      type: Sequelize.STRING,
+      type: Sequelize.BOOLEAN,
     },
     edition: {
       type: Sequelize.STRING,
@@ -13,6 +13,9 @@ export default function createBookModel(sequelize, Sequelize) {
       type: Sequelize.DATE,
     },
     author: {
+      type: Sequelize.STRING,
+    },
+    filename: {
       type: Sequelize.STRING,
     },
     userId: {
