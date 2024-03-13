@@ -6,7 +6,9 @@ export const AboutPage = () => {
     <>
       <Header />
       <main className="pb-20">
-        <img src="/assets/Images/TheTeam.webp" alt="" />
+
+        <img className="w-screen" src={TheTeamImage} alt="" />
+
         <div className="px-[18px]">
           <p className="text-dark font-bold text-[32px] w-fit pt-2 ">
             Our Team
