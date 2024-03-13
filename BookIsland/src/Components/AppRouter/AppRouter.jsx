@@ -1,6 +1,7 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 // import { PrivateRoute } from './PrivateRoute'
+
 
 import { LoginPage } from '../../Pages/User/LoginPage'
 import { RegisterUserPage } from '../../Pages/User/RegisterUserPage'
@@ -14,11 +15,13 @@ import { LandingPage } from '../../Pages/LandingPage'
 import { FallbackPage } from '../../Pages/FallbackPage'
 import { SpecificPage } from '../../Pages/SpecificPage'
 
+
 export const AppRouter = () => {
-   return (
+  return (
     <Routes>
-        <Route index element ={<LandingPage />} />
-        <Route path="/landing" element={<LandingPage />} />
+      <Route index element={<LandingPage />} />
+      <Route path="/landing" element={<LandingPage />} />
+
 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/Register" element={<RegisterUserPage />} />
@@ -32,8 +35,8 @@ export const AppRouter = () => {
         
         <Route path="*" element={<FallbackPage />}></Route>
 
-        
-    </Routes>
 
-  ) 
-}
+      <Route path="*" element={<FallbackPage />}></Route>
+    </Routes>
+  );
+};
