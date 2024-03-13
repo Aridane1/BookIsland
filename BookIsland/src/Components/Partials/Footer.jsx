@@ -9,6 +9,8 @@ import Chat from "/assets/Icons/Chat.svg";
 import ActiveChat from "/assets/Icons/ActiveChat.svg";
 
 export const Footer = () => {
+  const location = useLocation();
+
   return (
 
     
