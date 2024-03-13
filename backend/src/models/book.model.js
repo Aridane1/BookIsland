@@ -15,6 +15,15 @@ export default function createBookModel(sequelize, Sequelize) {
     author: {
       type: Sequelize.STRING,
     },
+    filename: {
+      type: Sequelize.STRING,
+    },
+    ISBN: {
+      type: Sequelize.STRING,
+    },
+    type_transaction: {
+      type: Sequelize.STRING,
+    },
     userId: {
       type: Sequelize.INTEGER,
     },

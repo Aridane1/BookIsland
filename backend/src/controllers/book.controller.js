@@ -1,9 +1,13 @@
+import * as url from "url";
 import { db } from "../models/index.js";
+
 const Book = db.Book;
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 export const createBook = async (req, res) => {
   try {
-    let { title, type, edition, date, author } = req.body;
+    let { title, type, edition, date, author, typeTransaction, ISBN } =
+      req.body;
     if (!title || !date || !author) throw new Error("Missing fields");
 
     let book = {
@@ -12,6 +16,8 @@ export const createBook = async (req, res) => {
       edition: edition,
       date: date,
       author: author,
+      type_transaction: typeTransaction,
+      ISBN: ISBN,
       filename: req.file ? req.file.filename : "",
     };
 
@@ -27,7 +33,7 @@ export const createBook = async (req, res) => {
 
 export const findAllBook = async (req, res) => {
   try {
-    let books = await Book.findAll();
+    let books = await Book.findAll({ include: { model: db.User } });
     if (books == []) {
       return res.status(404).send({ message: "No data found" });
     }
@@ -52,84 +58,110 @@ export const findOneBook = async (req, res) => {
   }
 };
 
-export const updateBook = (req, res) => {
-  const id = req.params.id;
-  Book.findByPk(id)
-    .then((book) => {
-      if (book.filename) {
-        const imagePath = path.join(
-          __dirname,
-          "../public/images/book",
-          book.filename
-        );
-        fs.unlink(imagePath, (err) => {
-          if (err) console.error("Error deleting img");
-          else {
-            console.log("image deleted");
-          }
-        });
-      }
-    })
-    .catch((error) => {
-      res.status(500).send({ message: "Error finding book" });
+export const updateBook = async (req, res) => {
+  try {
+    let { title, type, edition, date, author, typeTransaction, ISBN } =
+      req.body;
+    const { bookId } = req.params;
+    const book = await Book.findByPk(bookId);
+
+    if (!book) {
+      return res.status(404).send({ message: "Book Not Found!" });
+    }
+    let newBook = {
+      title: title,
+      type: type,
+      edition: edition,
+      date: date,
+      author: author,
+      type_transaction: typeTransaction,
+      ISBN: ISBN,
+      filename: req.file ? req.file.filename : "",
+    };
+
+    if (book.filename) {
+      const imagePath = path.join(__dirname, "../public/images", book.filename);
+      await fs.unlink(imagePath);
+      console.log("Image deleted");
+    }
+
+    const [num] = await Book.update(newBook, {
+      where: { id: bookId },
     });
 
-  Book.update(req.body, {
-    where: { id: id },
-  })
-    .then((num) => {
-      if (num == 1) {
-        res.send({
-          message: "Book updated.",
-        });
-      } else {
-        res.send({
-          message: "Book cannot be updated.",
-        });
-      }
-    })
-    .catch((error) => {
-      res.status(500).send({ message: "Error updating book" });
-    });
+    if (num == 1) {
+      res.send({
+        message: "Book updated.",
+      });
+    } else {
+      res.send({
+        message: "Book cannot be updated.",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error updating book" });
+  }
 };
 
-export const deleteOneBook = (req, res) => {
-  const id = req.params.id;
-  Book.findByPk(id)
-    .then((article) => {
-      if (article.filename) {
-        const imagePath = path.join(
-          __dirname,
-          "../public/images/book",
-          book.filename
-        );
-        fs.unlink(imagePath, (err) => {
-          if (err) console.error("Error deleting img");
-          else {
-            console.log("image deleted");
-          }
-        });
-      }
-    })
-    .catch((error) => {
-      res.status(500).send({ message: "Error finding book" });
+export const updateBookIfNotImage = async (req, res) => {
+  try {
+    const { bookId } = req.params;
+    const book = await Book.findByPk(bookId);
+
+    if (!book) {
+      return res.status(404).send({ message: "Book Not Found!" });
+    }
+    console.log(req.body);
+    const [num] = await Book.update(req.body, {
+      where: { id: bookId },
     });
 
-  Book.destroy({
-    where: { id: id },
-  })
-    .then((num) => {
-      if (num == 1) {
-        res.send({
-          message: "Book deleted.",
-        });
-      } else {
-        res.send({
-          message: "Book cannot be deleted.",
-        });
-      }
-    })
-    .catch((error) => {
-      res.status(500).send({ message: "Error deleting Book" });
+    if (num == 1) {
+      res.send({
+        message: "Book updated.",
+      });
+    } else {
+      res.send({
+        message: "Book cannot be updated.",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error updating book" });
+  }
+};
+
+export const deleteOneBook = async (req, res) => {
+  try {
+    const bookId = req.params.bookId;
+    const book = await Book.findByPk(bookId);
+
+    if (!book) {
+      return res.status(404).send({ message: "Book Not Found!" });
+    }
+
+    if (book.filename) {
+      const imagePath = path.join(__dirname, "../public/images", book.filename);
+      await fs.unlink(imagePath);
+      console.log("Image deleted");
+    }
+
+    const num = await Book.destroy({
+      where: { id: bookId },
     });
+
+    if (num == 1) {
+      res.send({
+        message: "Book deleted.",
+      });
+    } else {
+      res.send({
+        message: "Book cannot be deleted.",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ message: "Error deleting Book" });
+  }
 };
