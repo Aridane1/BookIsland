@@ -13,9 +13,9 @@ export const SpecificPage = () => {
             Lord of the Rings - The Fellowship of the Ring
             {/* ${book.title} */}
             </p>
-          <hr class="relative -top-[30px] w-[84px] h-1 mt-8 bg-dark border-0 rounded m-0 "></hr>
+          <hr class="w-[84px] h-1 my-2 bg-dark border-0 rounded m-0 "></hr>
         </div>
-        <div className="grid grid-cols-2 gap-[16px] justify-between pb-4">
+        <div className="grid grid-cols-2 gap-[16px] justify-between py-4">
             <ul className="list-none -pb-6 font-bold text-dark text-[22px] w-fit p-0">
                 <li className="pb-6">
                 Author
@@ -74,7 +74,7 @@ export const SpecificPage = () => {
               </li>
             </ul>
         </div>
-        <div className="flex pb-[48px] gap[32px] justify-between">
+        <div className="flex pb-[104px] gap[32px] justify-between">
         <div className="items-center">
             <button className="h-[48px]  rounded-lg text-primary font-bold text-[22px] px-[16px] py[8px] underline underline-offset-8">Go Back</button>
         </div>
