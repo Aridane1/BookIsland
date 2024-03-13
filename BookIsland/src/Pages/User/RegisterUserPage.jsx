@@ -1,4 +1,4 @@
-import { RegisterForm } from "../../Components/Partials/Forms/Register/RegisterForm";
+import { RegisterForm } from "../../Components/Partials/Forms/RegisterForm";
 import { SimpleFooter } from "../../Components/Partials/SimpleFooter";
 import { SimpleHeader } from "../../Components/Partials/SimpleHeader";
 
