@@ -1,12 +1,9 @@
-<<<<<<< HEAD
 import { Link } from "react-router-dom";
 
-export const RecentlyUploaded = () => {
-=======
+
 import { backendImageEndpoint } from "../../constants/backend.enpoints";
 
 export const RecentlyUploaded = (book) => {
->>>>>>> 48a2bd2966ff92f691f193ec04e499f65cb0fd7b
   return (
     <div>
       <div className="grid grid-cols-[1fr,3fr] gap-[37px]">
