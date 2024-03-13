@@ -1,6 +1,6 @@
 import { Footer } from "../Components/Partials/Footer"
 import { Header } from "../Components/Partials/Header"
-import BookCover from "../assets/Images/BookCover.jpg"
+import BookCover from "/assets/Images/BookCover.jpg"
 
 export const SpecificPage = () => {
   return (

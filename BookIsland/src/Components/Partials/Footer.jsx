@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import About from "/assets/Icons/About.svg";
 import ActiveAbout from "/assets/Icons/ActiveAbout.svg";
 import Home from "/assets/Icons/Home.svg";
@@ -40,7 +40,7 @@ export const Footer = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="profile">
+                <NavLink to="/user">
                     <img 
                     src={location.pathname === "/profile" ? ActiveProfile : Profile} 
                     alt=""
@@ -50,7 +50,7 @@ export const Footer = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink to="chat">
+                <NavLink to="/Overview-chat">
                     <img 
                     src={location.pathname === "/chat" ? ActiveChat : Chat} 
                     alt="" 
