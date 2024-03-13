@@ -6,16 +6,16 @@ export const SpecificPage = () => {
   return (
     <>
       <Header></Header>
-      <main className="px-0 -pb-20 m-[16px]">
+      <main className=" mt-[96px] px-0 m-[16px] ">
         <img className="w-screen" src={BookCover} alt="" />
-        <div>
-            <p className="text-dark font-bold text-[32px] w-fit pt-2 py-1 ">
+        <div className="p-0">
+            <p className="text-dark font-bold text-[32px] w-full py-1 pt-4 ">
             Lord of the Rings - The Fellowship of the Ring
             {/* ${book.title} */}
             </p>
-          <hr class="relative -top-[30px] w-[84px] h-1 my-8 bg-dark border-0 rounded m-0 "></hr>
+          <hr class="relative -top-[30px] w-[84px] h-1 mt-8 bg-dark border-0 rounded m-0 "></hr>
         </div>
-        <div className="grid grid-cols-2 gap-[32px] -mt-[20px] justify-between">
+        <div className="grid grid-cols-2 gap-[16px] justify-between pb-4">
             <ul className="list-none -pb-6 font-bold text-dark text-[22px] w-fit p-0">
                 <li className="pb-6">
                 Author
@@ -30,7 +30,7 @@ export const SpecificPage = () => {
                 ISBN-13
                 </li>
             </ul>
-            <ul className="list-none -text-primary text-[22px]  p-0">
+            <ul className="list-none -text-primary text-[22px] w-full p-0 text-primary">
               <li className="pb-6">
                 J.R.R Tolkien
                 {/* ${book.author} */}
@@ -50,7 +50,7 @@ export const SpecificPage = () => {
             </ul>
         </div>
         <div className="-mt-[20px]">
-        <p className="pb-6 text-[16] text-dark text- ">
+        <p className="text-[16] text-dark text- ">
             The Fellowship of the Ring consists of nine
             walkers who set out on the quest to destroy the
             One Ring, in opposition to the nine Black Riders:
@@ -61,7 +61,7 @@ export const SpecificPage = () => {
             {/* ${book.description} */}
         </p>
         </div>
-        <div className="grid grid-cols-2 gap-[32px] justify-between m-0 p-4">
+        <div className="grid grid-cols-2 gap-[32px] justify-between m-0 py-4 ">
             <ul className="list-none font-bold text-dark text-[22px] w-fit m-0 p-0">
               <li>
                 Uploaded by
@@ -74,12 +74,12 @@ export const SpecificPage = () => {
               </li>
             </ul>
         </div>
-        <div className="pb-16 flex">
-        <div className="justify-center items-center">
-            <button className="w-10/12 h-[48px] bg-primary rounded-lg text-light font-bold text-[22px] pr-[20px]">Add a book </button>
+        <div className="flex pb-[48px] gap[32px] justify-between">
+        <div className="items-center">
+            <button className="h-[48px]  rounded-lg text-primary font-bold text-[22px] px-[16px] py[8px] underline underline-offset-8">Go Back</button>
         </div>
-        <div className="justify-center items-center">
-            <button className="w-10/12 h-[48px] bg-primary rounded-lg text-light font-bold text-[22px] pr-[20px]">Add a book </button>
+        <div className="items-center">
+            <button className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]">Reserve & Contact </button>
         </div>
         </div>
       </main>
