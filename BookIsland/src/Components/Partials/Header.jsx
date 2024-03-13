@@ -4,7 +4,7 @@ import LogOut from "/assets/Logos/close-round-fill.svg";
 
 export const Header = () => {
   return (
-    <header className=" fixed  top-0 w-screen h-20 bg-primary flex justify-between items-center pl-4">
+    <header className="  top-0 w-screen h-20 bg-primary flex justify-between items-center pl-4">
       <img src={logo} alt="" className=" rounded-full " />
       <div className="flex justify-between items-center m- rounded-full bg-primary">
         <img src={FAQ} alt="" className="bg-primary" />
