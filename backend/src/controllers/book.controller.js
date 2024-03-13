@@ -18,6 +18,7 @@ export const createBook = async (req, res) => {
       author: author,
       type_transaction: typeTransaction,
       ISBN: ISBN,
+      description: description,
       filename: req.file ? req.file.filename : "",
     };
 
@@ -48,20 +49,32 @@ export const findAllBook = async (req, res) => {
 export const findOneBook = async (req, res) => {
   try {
     let { bookId } = req.params;
-    let book = await user.findOne({ where: { id: bookId } });
+    let book = await Book.findOne({
+      where: { id: bookId },
+      include: { model: db.User },
+    });
     if (!book) {
       return res.status(404).send({ message: "Book Not Found!" });
     }
     res.status(200).send(book);
   } catch (err) {
+    console.log(err);
     res.status(500).send({ message: "Error finding the book" });
   }
 };
 
 export const updateBook = async (req, res) => {
   try {
-    let { title, type, edition, date, author, typeTransaction, ISBN } =
-      req.body;
+    let {
+      title,
+      type,
+      edition,
+      date,
+      author,
+      typeTransaction,
+      description,
+      ISBN,
+    } = req.body;
     const { bookId } = req.params;
     const book = await Book.findByPk(bookId);
 
@@ -76,6 +89,7 @@ export const updateBook = async (req, res) => {
       author: author,
       type_transaction: typeTransaction,
       ISBN: ISBN,
+      description: description,
       filename: req.file ? req.file.filename : "",
     };
 
