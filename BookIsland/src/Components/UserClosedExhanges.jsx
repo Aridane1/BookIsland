@@ -1,4 +1,4 @@
-import BookTest from "../assets/Images/BookTest.svg"
+
 export const UserClosedExhanges = () => {
   return (
     <>
@@ -6,7 +6,7 @@ export const UserClosedExhanges = () => {
     <div className="grid grid-cols-5 grid-rows-1 gap-4 pb-20">
         <div className="col-span-1 flex flex-col items-center pl-[18px]">
             <img 
-            src={BookTest} 
+            src=" "  //image from fetch
             alt="Image of the book"
             className="w-[80px]" />
             <p className=" mt-5 bg-donate w-fit rounded-lg py-1.5 px-2 text-light">donate</p>

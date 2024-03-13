@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { AddABook } from "../../Components/Feed/AddBook/AddABook"
 import { Footer } from "../../Components/Partials/Footer"
 import { Header } from "../../Components/Partials/Header"
-import TestPorfileImage from "../../assets/Images/EyeCatcher.svg";
+import TestPorfileImage from "/assets/Images/EyeCatcher.webp";
 import { UserUploadedBooks } from "../../Components/UserUploadedBooks";
 import { UserPendigBooks } from "../../Components/UserPendigBooks";
 import { UserClosedExhanges } from "../../Components/UserClosedExhanges";

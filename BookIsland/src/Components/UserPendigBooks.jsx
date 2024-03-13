@@ -1,4 +1,3 @@
-import BookTest from "../assets/Images/BookTest.svg"
 export const UserPendigBooks = () => {
   return (
     <>
@@ -6,7 +5,7 @@ export const UserPendigBooks = () => {
     <div className=" grid grid-cols-5 grid-rows-1 gap-4 pb-10">
         <div className="col-span-1 flex flex-col items-center pl-[18px]">
             <img 
-            src={BookTest} 
+             src=" "  //image from fetch 
             alt=""
             className="w-[80px]" />
             <p className=" mt-5 bg-swap w-fit rounded-lg py-1.5 px-2 text-light">swap</p>

@@ -1,4 +1,4 @@
-import BookTest from "../../../assets/Images/BookTest.svg"
+import BookTest from "/assets/Icons/bookTest.svg"
 import { ToggleSwitch } from "../../ToggleSwitch"
 
 export const UploadBookPicture = () => {

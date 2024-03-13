@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from './AddBookModal';
 import { FaCirclePlus } from "react-icons/fa6";
-import closeIcon from "../../../assets/Icons/closeButton.svg"
+import closeIcon from "/assets/Icons/CloseButton.svg"
 import { UploadBookPicture } from "../../Partials/Forms/UploadBook"
 
 export const AddABook = () => {

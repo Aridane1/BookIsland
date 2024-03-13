@@ -25,6 +25,7 @@ export const AppRouter = () => {
 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/Register" element={<RegisterUserPage />} />
+        
         <Route path="/specific" element={<SpecificPage />} />
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
@@ -36,7 +37,6 @@ export const AppRouter = () => {
         <Route path="*" element={<FallbackPage />}></Route>
 
 
-      <Route path="*" element={<FallbackPage />}></Route>
     </Routes>
   );
 };
