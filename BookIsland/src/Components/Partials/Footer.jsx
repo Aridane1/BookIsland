@@ -13,7 +13,7 @@ export const Footer = () => {
     <nav className="fixed bottom-0 left-0 w-screen h-20 bg-primary flex justify-center items-center">
       <ul className="flex justify-between w-full mx-8  bg-primary">
         <li className=" bg-primary">
-          <NavLink to="/about" activeClassName="active">
+          <NavLink to="/about">
             <img
               src={location.pathname === "/about" ? ActiveAbout : About}
               alt=""

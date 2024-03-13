@@ -1,15 +1,31 @@
+import { useEffect, useState } from "react";
 import { AddABook } from "../Components/Feed/AddABook";
 import { EyeCatcher } from "../Components/Feed/EyeCatcher";
 import { RecentlyUploaded } from "../Components/Feed/RecentlyUploaded";
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
+import BookService from "../services/BookService";
 
 export const HomePage = () => {
+  const [books, setBooks] = useState([]);
+
+  const getAllBooks = async () => {
+    try {
+      const response = await BookService.getAllBooks();
+      setBooks(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  useEffect(() => {
+    getAllBooks();
+  }, []);
+
   return (
     <>
       <Header />
       <main className="pb-20">
-        <EyeCatcher></EyeCatcher>
+        <EyeCatcher />
         <div className="px-[18px]">
           <p className="text-dark font-bold text-[32px] w-fit pt-2 ">
             Recently uploaded
@@ -18,7 +34,15 @@ export const HomePage = () => {
         </div>
         <AddABook />
         <div className="px-[18px]">
-          <RecentlyUploaded />
+          {books.map((book) => (
+            <RecentlyUploaded
+              filename={book.filename}
+              title={book.title}
+              typeTransaction={book.type_transaction}
+              username={book.user.username}
+              key={book.id}
+            />
+          ))}
         </div>
       </main>
       <Footer />
