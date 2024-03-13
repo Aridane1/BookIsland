@@ -7,7 +7,7 @@ export const AboutPage = () => {
     <>
       <Header></Header>
       <main className="pb-20">
-        <img src={TheTeamImage} alt="" />
+        <img className="w-screen" src={TheTeamImage} alt="" />
         <div className="px-[18px]">
           <p className="text-dark font-bold text-[32px] w-fit pt-2 ">Our Team</p>
           <hr class="relative -top-[30px] w-[84px] h-1 my-8 bg-dark border-0 rounded "></hr>

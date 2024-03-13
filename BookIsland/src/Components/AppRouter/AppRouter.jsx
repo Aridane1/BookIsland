@@ -12,6 +12,7 @@ import { FAQPage } from '../../Pages/FAQPage'
 import { HomePage } from "../../Pages/HomePage"
 import { LandingPage } from '../../Pages/LandingPage'
 import { FallbackPage } from '../../Pages/FallbackPage'
+import { SpecificPage } from '../../Pages/SpecificPage'
 
 export const AppRouter = () => {
    return (
@@ -21,7 +22,7 @@ export const AppRouter = () => {
 
         <Route path="/login" element={<LoginPage />} />
         <Route path="/Register" element={<RegisterUserPage />} />
-
+        <Route path="/specific" element={<SpecificPage />} />
         <Route path="/home" element={<HomePage />}></Route>
         <Route path="/about" element={<AboutPage />}></Route>
         <Route path="/faq" element={<FAQPage />}></Route>
