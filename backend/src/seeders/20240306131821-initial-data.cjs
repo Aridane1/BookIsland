@@ -3,9 +3,26 @@
 const bcrypt = require("bcryptjs");
 const { fakerES } = require("@faker-js/faker");
 
+function generateRandomISBN() {
+  let isbn = "978";
+  for (let i = 0; i < 9; i++) {
+    isbn += Math.floor(Math.random() * 10);
+  }
+
+  let sum = 0;
+  for (let i = 0; i < 12; i++) {
+    sum += parseInt(isbn[i]) * (i % 2 === 0 ? 1 : 3);
+  }
+  const checkDigit = (10 - (sum % 10)) % 10;
+
+  isbn += checkDigit;
+
+  return isbn;
+}
+
 function addTransfer(transfers) {
   const transferArray = transfers.map((transfer, index) => ({
-    type_transaction: transfer.type_transaction,
+    type_transaction: transfer.typeTransaction,
     date_transaction: transfer.date_transaction,
     userId: transfer.userId,
     bookId: transfer.bookId,
@@ -23,6 +40,8 @@ function addBooks(books) {
     date: book.date,
     author: book.author,
     userId: book.userId,
+    type_transaction: book.typeTransaction,
+    ISBN: book.ISBN,
     createdAt: book.createdAt,
     updatedAt: book.updatedAt,
   }));
@@ -72,6 +91,8 @@ function setupData() {
       edition: "Primera",
       author: "J.R.R. Tolkien",
       userId: 1,
+      typeTransaction: "swap",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1954-07-29"),
@@ -82,6 +103,8 @@ function setupData() {
       edition: "Segunda",
       author: "Gabriel García Márquez",
       userId: 2,
+      typeTransaction: "donate",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1967-05-30"),
@@ -92,6 +115,8 @@ function setupData() {
       edition: "Primera",
       author: "J.K. Rowling",
       userId: 3,
+      typeTransaction: "swap",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1997-06-26"),
@@ -102,6 +127,8 @@ function setupData() {
       edition: "Primera",
       author: "George Orwell",
       userId: 4,
+      typeTransaction: "donate",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1949-06-08"),
@@ -112,6 +139,8 @@ function setupData() {
       edition: "Segunda",
       author: "Jane Austen",
       userId: 5,
+      typeTransaction: "swap",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1813-01-28"),
@@ -122,6 +151,8 @@ function setupData() {
       edition: "Primera",
       author: "Miguel de Cervantes",
       userId: 6,
+      typeTransaction: "swap",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1605-01-16"),
@@ -132,6 +163,8 @@ function setupData() {
       edition: "Segunda",
       author: "Harper Lee",
       userId: 6,
+      typeTransaction: "swap",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1960-07-11"),
@@ -142,6 +175,8 @@ function setupData() {
       edition: "Tercera",
       author: "Gabriel García Márquez",
       userId: 6,
+      typeTransaction: "donate",
+      ISBN: generateRandomISBN(),
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1981-01-07"),
@@ -150,7 +185,7 @@ function setupData() {
 
   const transfers = addTransfer([
     {
-      type_transaction: "swap",
+      typeTransaction: "swap",
       date_transaction: new Date(),
       userId: 1,
       bookId: 2,
@@ -158,7 +193,7 @@ function setupData() {
       updatedAt: new Date(),
     },
     {
-      type_transaction: "swap",
+      typeTransaction: "swap",
       date_transaction: new Date(),
       userId: 2,
       bookId: 1,
@@ -166,7 +201,7 @@ function setupData() {
       updatedAt: new Date(),
     },
     {
-      type_transaction: "swap",
+      typeTransaction: "swap",
       date_transaction: new Date(),
       userId: 3,
       bookId: 4,
@@ -174,7 +209,7 @@ function setupData() {
       updatedAt: new Date(),
     },
     {
-      type_transaction: "swap",
+      typeTransaction: "swap",
       date_transaction: new Date(),
       userId: 4,
       bookId: 3,
