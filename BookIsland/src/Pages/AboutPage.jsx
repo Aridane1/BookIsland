@@ -1,13 +1,12 @@
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
-import TheTeamImage from "../assets/Images/TheTeam.svg";
 
 export const AboutPage = () => {
   return (
     <>
       <Header />
       <main className="pb-20">
-        <img src={TheTeamImage} alt="" />
+        <img src="/assets/Images/TheTeam.webp" alt="" />
         <div className="px-[18px]">
           <p className="text-dark font-bold text-[32px] w-fit pt-2 ">
             Our Team

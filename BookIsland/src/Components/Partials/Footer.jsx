@@ -1,12 +1,12 @@
 import { NavLink } from "react-router-dom";
-import About from "../../assets/Icons/About.svg";
-import ActiveAbout from "../../assets/Icons/ActiveAbout.svg";
-import Home from "../../assets/Icons/Home.svg";
-import ActiveHome from "../../assets/Icons/ActiveHome.svg";
-import Profile from "../../assets/Icons/Profile.svg";
-import ActiveProfile from "../../assets/Icons/ActiveProfile.svg";
-import Chat from "../../assets/Icons/Chat.svg";
-import ActiveChat from "../../assets/Icons/ActiveChat.svg";
+import About from "/assets/Icons/About.svg";
+import ActiveAbout from "/assets/Icons/ActiveAbout.svg";
+import Home from "/assets/Icons/Home.svg";
+import ActiveHome from "/assets/Icons/ActiveHome.svg";
+import Profile from "/assets/Icons/Profile.svg";
+import ActiveProfile from "/assets/Icons/ActiveProfile.svg";
+import Chat from "/assets/Icons/Chat.svg";
+import ActiveChat from "/assets/Icons/ActiveChat.svg";
 
 export const Footer = () => {
   return (

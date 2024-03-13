@@ -1,6 +1,6 @@
-import logo from "../../assets/Logos/Group-40.svg";
-import FAQ from "../../assets/Logos/FAQ.svg";
-import LogOut from "../../assets/Logos/close-round-fill.svg";
+import logo from "/assets/Logos/Group-40.svg";
+import FAQ from "/assets/Logos/FAQ.svg";
+import LogOut from "/assets/Logos/close-round-fill.svg";
 
 export const Header = () => {
   return (
