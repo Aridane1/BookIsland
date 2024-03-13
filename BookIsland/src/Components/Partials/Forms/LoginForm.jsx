@@ -15,8 +15,8 @@ export const LoginForm = () => {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
+
     await AuthService.login(user).then((response) => {
-      console.log(response.data);
       localStorage.setItem("token", response.data.access_token);
       navigate("/home");
     });

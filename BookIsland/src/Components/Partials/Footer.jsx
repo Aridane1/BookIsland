@@ -13,58 +13,46 @@ export const Footer = () => {
 
   return (
 
-    
-    <nav className="fixed bottom-0 left-0 w-screen h-20 bg-primary flex justify-center items-center" >
-        <ul className="list-none flex justify-between w-full mx-8  bg-primary">
-            <li className=" bg-primary" >
-                <NavLink 
-                to="/about" 
-                activeClassName="active"
-                >
-                    <img 
-                    src={location.pathname === "/about" ? ActiveAbout : About}
-                    alt=""
-                    className=" bg-primary"
+    <nav className="fixed bottom-0 left-0 w-screen h-20 bg-primary flex justify-center items-center">
+      <ul className="flex justify-between w-full mx-8  bg-primary">
+        <li className=" bg-primary">
+          <NavLink to="/about">
+            <img
+              src={location.pathname === "/about" ? ActiveAbout : About}
+              alt=""
+              className=" bg-primary"
+            />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/home">
+            <img
+              src={location.pathname === "/home" ? ActiveHome : Home}
+              alt=""
+              className=" bg-primary"
+            />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="profile">
+            <img
+              src={location.pathname === "/profile" ? ActiveProfile : Profile}
+              alt=""
+              className=" bg-primary"
+            />
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="chat">
+            <img
+              src={location.pathname === "/chat" ? ActiveChat : Chat}
+              alt=""
+              className=" bg-primary"
+            />
+          </NavLink>
+        </li>
+      </ul>
 
-                    />
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/home">
-                    <img 
-                    src={location.pathname === "/home" ? ActiveHome : Home} 
-                    alt=""
-                    className=" bg-primary" 
-                    />
-
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/user">
-                    <img 
-                    src={location.pathname === "/profile" ? ActiveProfile : Profile} 
-                    alt=""
-                    className=" bg-primary" 
-                    />
-
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/Overview-chat">
-                    <img 
-                    src={location.pathname === "/chat" ? ActiveChat : Chat} 
-                    alt="" 
-                    className=" bg-primary" 
-                    />
-                    
-                </NavLink>
-            </li>
-        </ul>
-
-
-
- 
-                      
     </nav>
   );
 };
