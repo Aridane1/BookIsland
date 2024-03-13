@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const RecentlyUploaded = () => {
   return (
     <div>
@@ -15,9 +17,9 @@ export const RecentlyUploaded = () => {
             username
           </h3>
 
-          <button className="w-full h-[42px] bg-primary text-light rounded-lg">
+          <Link to="/specific" className="w-full h-[42px] bg-primary text-light rounded-lg">
             View
-          </button>
+          </Link>
         </div>
       </div>
       <hr className="relative w-full h-1 my-8 bg-dark border-0 rounded mt-[32px]"></hr>
