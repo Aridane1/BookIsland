@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const UploadingPicture = () => {
   const [profileImage, setProfileImage] = useState(null); // Statevariabel til at gemme billedstien
@@ -30,7 +30,7 @@ export const UploadingPicture = () => {
         {!profileImage && (
           <div
             id="inputFieldSmall"
-            className="flex w-16 h-16 items-center rounded-full justify-center text-center border border-black border-solid border-primary text-primary"
+            className="flex w-16 h-16 items-center rounded-full justify-center text-center border border-solid border-primary text-primary"
           >
             Upload <br></br>picture
           </div>
