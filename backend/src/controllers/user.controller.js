@@ -80,12 +80,13 @@ export const updateUser = async (req, res) => {
 export const findOneUser = async (req, res) => {
   try {
     let { userId } = req.params;
-    let user = await user.findOne({ where: { id: userId } });
+    let user = await User.findOne({ where: { id: userId } });
     if (!user) {
       return res.status(404).send({ message: "User Not Found!" });
     }
     res.status(200).send(user);
   } catch (err) {
+    console.log(err);
     res.status(500).send({ message: "Error finding the user" });
   }
 };

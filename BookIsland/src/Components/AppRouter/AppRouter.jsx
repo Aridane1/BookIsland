@@ -29,7 +29,10 @@ export const AppRouter = () => {
       <Route path="/faq" element={<FAQPage />}></Route>
       <Route path="/user" element={<UserPage />}></Route>
       <Route path="/Overview-chat" element={<OverviewChatPage />}></Route>
-      <Route path="/specific-chat" element={<SpecificChatPage />}></Route>
+      <Route
+        path="/specific-chat/:bookId/:userId"
+        element={<SpecificChatPage />}
+      ></Route>
 
       <Route path="*" element={<FallbackPage />}></Route>
     </Routes>

@@ -18,7 +18,7 @@ export const signin = async (req, res) => {
         message: "Email or Password required.",
       });
     }
-    let userData = await User.findOne({ email: email });
+    let userData = await User.findOne({ where: { email: email } });
     let result = bcrypt.compareSync(pwd, userData.password);
 
     if (!result) return res.status(401).send("Password not valid!");

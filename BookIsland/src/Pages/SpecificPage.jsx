@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import BookService from "../services/BookService";
 import { backendImageEndpoint } from "../constants/backend.enpoints";
-import "../../src/global.css"
-
+import "../../src/global.css";
 
 export const SpecificPage = () => {
   const [book, setBook] = useState();
   const { bookId } = useParams();
+
+  const navigate = useNavigate();
 
   const getBookById = async (id) => {
     const response = await BookService.getOneBookById(id);
@@ -32,6 +33,10 @@ export const SpecificPage = () => {
     return `${day}/${month}/${year}`;
   };
 
+  const goToChat = (bookId, userId) => {
+    navigate(`/specific-chat/${bookId}/${userId}`);
+  };
+
   useEffect(() => {
     getBookById(bookId);
   }, [bookId]);
@@ -40,7 +45,7 @@ export const SpecificPage = () => {
     <>
       <Header></Header>
       {book ? (
-        <main className=" mt-[96px] px-0 m-[16px] ">
+        <main className="mt-[96px] px-0 m-[16px] ">
           <img
             className="w-screen"
             src={`${backendImageEndpoint}/${book.filename}`}
@@ -80,14 +85,17 @@ export const SpecificPage = () => {
           <div className="flex pb-[104px] gap[32px] justify-between">
             <div className="items-center">
               <Link
-                to="/home"
+                to={"/home"}
                 className="h-[48px]  rounded-lg text-primary font-bold text-[22px] px-[16px] py[8px] underline underline-offset-8"
               >
                 Go Back
               </Link>
             </div>
             <div className="items-center">
-              <button className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]">
+              <button
+                className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]"
+                onClick={() => goToChat(book.id, book.userId)}
+              >
                 Reserve & Contact
               </button>
             </div>
