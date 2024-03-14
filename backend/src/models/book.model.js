@@ -21,6 +21,7 @@ export default function createBookModel(sequelize, Sequelize) {
     ISBN: {
       type: Sequelize.STRING,
     },
+    description: { type: Sequelize.STRING },
     type_transaction: {
       type: Sequelize.STRING,
     },

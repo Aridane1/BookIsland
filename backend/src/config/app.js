@@ -36,20 +36,20 @@ app.use("/api/book", bookRouter);
 app.use("/api/transfer", transferRouter);
 app.use("/api/chat-user", chatUserRouter);
 
-db.sequelize.sync();
-// db.sequelize.sync({ force: true }).then(() => {
-//   exec("sequelize db:seed:all", (error, stdout, stderr) => {
-//     if (error) {
-//       console.error(`Error al ejecutar los seeders: ${error.message}`);
-//       return;
-//     }
+// db.sequelize.sync();
+db.sequelize.sync({ force: true }).then(() => {
+  exec("sequelize db:seed:all", (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error al ejecutar los seeders: ${error.message}`);
+      return;
+    }
 
-//     if (stderr) {
-//       console.error(`stderr: ${stderr}`);
-//       return;
-//     }
-//     console.log(`Seeders ejecutados correctamente: ${stdout}`);
-//   });
-// });
+    if (stderr) {
+      console.error(`stderr: ${stderr}`);
+      return;
+    }
+    console.log(`Seeders ejecutados correctamente: ${stdout}`);
+  });
+});
 
 export default app;
