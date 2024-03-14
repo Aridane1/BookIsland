@@ -6,7 +6,7 @@ export function Modal ({ isOpen, onRequestClose, children }) {
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Modal"
-      className="w-11/12 mt-[178px] m-auto shadow-dark shadow-lg"
+      className="w-11/12 mt-[178px] m-auto shadow-dark shadow-lg rounded-lg"
       style={{overlay: {backgroundColor:'#666C73df'}}}
     >
       {children}
