@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+
+import { Link, useNavigate } from "react-router-dom";
 
 
 import { backendImageEndpoint } from "../../constants/backend.enpoints";
 
 export const RecentlyUploaded = (book) => {
+  const navigate = useNavigate();
+
+  const goToInformationOfBook = (id) => {
+    navigate(`/specific/${id}`);
+  };
+
   return (
     <div>
       <div className="grid grid-cols-[1fr,3fr] gap-[37px]">
@@ -29,7 +36,9 @@ export const RecentlyUploaded = (book) => {
             {book.username}
           </h3>
 
+
           <Link to="/specific" className="w-full h-[42px] bg-primary text-light rounded-lg">
+
             View
           </Link>
         </div>
