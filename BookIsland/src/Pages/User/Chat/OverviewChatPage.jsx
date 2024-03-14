@@ -38,7 +38,7 @@ export const OverviewChatPage = () => {
 useEffect(() => {
   // Cleanup timer if component unmounts or shouldShowElement changes
   let timer;
-  if (shouldShowElement !== "deleting") {
+  if (shouldShowElement === "deleting") {
     timer = setTimeout(() => {
       setShouldShowElement("deleted");
     }, 1550);
@@ -65,10 +65,9 @@ useEffect(() => {
         </div>
         {shouldShowElement === "deleting" && (
           <div className="-mt-8">
-
-            <div className="absolute w-[68px] mx-[18px] h-20 bg-[#FF6565] flex justify-center items-center rounded-lg">
-              <FaCirclePlus className="text-light text-[40px] rotate-45" />
-            </div>
+          <div className="absolute w-[68px] mx-[18px] h-20 bg-[#FF6565] flex justify-center items-center rounded-lg">
+            <FaCirclePlus className="text-[40px] last:text-light bg-[#FF6565] -rotate-45" />
+          </div>
           </div>
         )}
         {!(shouldShowElement === "deleted") && (  
@@ -93,6 +92,7 @@ useEffect(() => {
           </div> 
         )}
     </div>
+
       <Footer />
     </>
   )
