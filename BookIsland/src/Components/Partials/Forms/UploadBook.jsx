@@ -25,31 +25,31 @@ export const UploadBookPicture = () => {
                 type="text" 
                 placeholder="title" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"  
+                className=" bg-secondary w-11/12 mb-4 pl-2"  
                 />
             <input 
                 type="text" 
                 placeholder="author" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"  
+                className=" bg-secondary w-11/12 mb-4 pl-2"  
             />
             <input 
                 type="text" 
                 placeholder="publisher" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"
+                className=" bg-secondary w-11/12 mb-4 pl-2"
                 />
             <input 
                 type="text" 
                 placeholder="publish date" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"
+                className=" bg-secondary w-11/12 mb-4 pl-2"
                 />
             <input 
                 type="text" 
                 placeholder="ISBN-13" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2" 
+                className=" bg-secondary w-11/12 mb-4 pl-2" 
                 />
             <textarea  
                 rows="3"
