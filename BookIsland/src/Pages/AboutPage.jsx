@@ -6,7 +6,7 @@ export const AboutPage = () => {
   return (
     <>
       <Header />
-      <main className="pb-20">
+      <main className="py-20">
 
         <img className="w-screen" src={TheTeamImage} alt="" />
 
