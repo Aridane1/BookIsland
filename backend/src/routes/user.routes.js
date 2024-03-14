@@ -6,6 +6,7 @@ import {
   updateUser,
   findOneUser,
 } from "../controllers/user.controller.js";
+import { multerUltis } from "../middlewares/multerUtlis.middleware.js";
 
 import {
   isAuthenticated,
@@ -16,8 +17,8 @@ const router = Router();
 
 router.get("/", isAuthenticated, findAllUser);
 router.get("/:userId", isAuthenticated, findOneUser);
-router.post("/", createUser);
-router.put("/noImage/:userId", isAuthenticated, updateUser);
+router.post("/", multerUltis.single("file"), createUser);
+router.put("/noImage/:userId", multerUltis.single("file"), isAuthenticated, updateUser);
 router.delete("/:userId", isAuthenticated, deleteOneUser);
 router.post("/signin", signin);
 

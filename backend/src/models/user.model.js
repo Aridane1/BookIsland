@@ -16,6 +16,9 @@ export default function createUserModel(sequelize, Sequelize) {
     gender: {
       type: Sequelize.STRING,
     },
+    filename: {
+      type: Sequelize.STRING,
+    },
   });
 
   return User;
