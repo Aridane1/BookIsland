@@ -34,9 +34,9 @@ export const Footer = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="profile">
+          <NavLink to="user">
             <img
-              src={location.pathname === "/profile" ? ActiveProfile : Profile}
+              src={location.pathname === "/user" ? ActiveProfile : Profile}
               alt=""
               className=" bg-primary"
             />
