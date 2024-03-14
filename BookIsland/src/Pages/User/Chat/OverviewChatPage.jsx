@@ -8,7 +8,7 @@ import { FaCirclePlus } from "react-icons/fa6";
 export const OverviewChatPage = () => {
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
-  const [shouldShowElement, setShouldShowElement] = useState(false); // State for controlling element visibility
+  const [shouldShowElement, setShouldShowElement] = useState("normal"); // State for controlling element visibility
 
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
@@ -27,20 +27,21 @@ export const OverviewChatPage = () => {
     const isRightSwipe = distance < -minSwipeDistance
     if (isRightSwipe) {
     //  console.log('swiperight')
-    setShouldShowElement(true); // Show the element on right swipe
+    
+    setShouldShowElement("deleting"); // Show the element on right swipe
     setTimeout(() => {
-      setShouldShowElement(false); // Hide the element after 5 seconds
-    }, 5000); // 5000 milliseconds = 5 seconds
+      setShouldShowElement("deleted"); // Hide the element after 5 seconds
+    }, 1550); // 1550 milliseconds = 1,55 seconds
   }
 };
 
 useEffect(() => {
   // Cleanup timer if component unmounts or shouldShowElement changes
   let timer;
-  if (shouldShowElement) {
+  if (shouldShowElement !== "deleting") {
     timer = setTimeout(() => {
-      setShouldShowElement(false);
-    }, 5000);
+      setShouldShowElement("deleted");
+    }, 1550);
   }
   return () => clearTimeout(timer);
 }, [shouldShowElement]);
@@ -61,7 +62,7 @@ useEffect(() => {
         <p className="text-dark font-bold text-[32px] w-fit pt-2 ">Your chat</p>
         <hr className="relative -top-[30px] w-[84px] h-1 my-8 bg-dark border-0 rounded "></hr>
       </div>
-      {shouldShowElement && (
+      {shouldShowElement === "deleting" && (
         <div className="-mt-8">
 
           <div className="absolute w-[68px] mx-[18px] h-20 bg-[#FF6565] flex justify-center items-center rounded-lg">
@@ -69,7 +70,8 @@ useEffect(() => {
           </div>
         </div>
        )}
-
+      {!(shouldShowElement === "deleted") && (
+        
       <div 
         className="grid grid-cols-6 px-[18px] -mt-[30px] "
         onTouchStart={onTouchStart} 
@@ -89,7 +91,7 @@ useEffect(() => {
           <p className="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit..{" "} </p>
         </div>
       </div> 
-    
+    )}
       <Footer />
     </>
   )
