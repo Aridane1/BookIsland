@@ -13,6 +13,7 @@ import { HomePage } from "../../Pages/HomePage";
 import { LandingPage } from "../../Pages/LandingPage";
 import { FallbackPage } from "../../Pages/FallbackPage";
 import { SpecificPage } from "../../Pages/SpecificPage";
+import TestChat from "../../Pages/TestChat";
 
 export const AppRouter = () => {
   return (
@@ -29,7 +30,12 @@ export const AppRouter = () => {
       <Route path="/faq" element={<FAQPage />}></Route>
       <Route path="/user" element={<UserPage />}></Route>
       <Route path="/Overview-chat" element={<OverviewChatPage />}></Route>
-      <Route path="/specific-chat" element={<SpecificChatPage />}></Route>
+      <Route
+        path="/specific-chat/:bookId"
+        element={<SpecificChatPage />}
+      ></Route>
+
+      <Route path="/test" element={<TestChat />}></Route>
 
       <Route path="*" element={<FallbackPage />}></Route>
     </Routes>

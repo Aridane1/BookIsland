@@ -7,3 +7,5 @@ export const backendAuthEnpoint = `${backendEnpoint}/api/user`;
 export const backendBookEnpoint = `${backendEnpoint}/api/book`;
 
 export const backendImageEndpoint = `${backendEnpoint}/images`;
+
+export const backendChatUserEndpoint = `${backendEnpoint}/api/chat-user`;

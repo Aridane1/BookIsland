@@ -29,6 +29,13 @@ db.Transfer.belongsTo(db.Book, { foreignKey: "bookId" });
 db.Message.belongsTo(db.User, { foreignKey: "emitId" });
 db.Message.belongsTo(db.User, { foreignKey: "recepId" });
 
-db.ChatUser.belongsTo(db.User, { foreignKey: "interested_user" });
-db.ChatUser.belongsTo(db.User, { foreignKey: "changing_user" });
+db.ChatUser.belongsTo(db.User, {
+  foreignKey: "interested_user",
+  as: "interestedUser",
+});
+db.ChatUser.belongsTo(db.User, {
+  foreignKey: "changing_user",
+  as: "changingUser",
+});
+
 db.ChatUser.belongsTo(db.Book, { foreignKey: "book_id" });

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
@@ -9,6 +9,7 @@ import { backendImageEndpoint } from "../constants/backend.enpoints";
 export const SpecificPage = () => {
   const [book, setBook] = useState();
   const { bookId } = useParams();
+  const navigate = useNavigate();
 
   const getBookById = async (id) => {
     const response = await BookService.getOneBookById(id);
@@ -30,6 +31,10 @@ export const SpecificPage = () => {
     return `${day}/${month}/${year}`;
   };
 
+  const goToChat = (bookId) => {
+    navigate(`/specific-chat/${bookId}`);
+  };
+
   useEffect(() => {
     getBookById(bookId);
   }, [bookId]);
@@ -38,7 +43,7 @@ export const SpecificPage = () => {
     <>
       <Header></Header>
       {book ? (
-        <main className=" mt-[96px] px-0 m-[16px] ">
+        <main className="mt-[96px] px-0 m-[16px] ">
           <img
             className="w-screen"
             src={`${backendImageEndpoint}/${book.filename}`}
@@ -78,14 +83,17 @@ export const SpecificPage = () => {
           <div className="flex pb-[104px] gap[32px] justify-between">
             <div className="items-center">
               <Link
-                to="/home"
+                to={"/home"}
                 className="h-[48px]  rounded-lg text-primary font-bold text-[22px] px-[16px] py[8px] underline underline-offset-8"
               >
                 Go Back
               </Link>
             </div>
             <div className="items-center">
-              <button className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]">
+              <button
+                className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]"
+                onClick={() => goToChat(book.id)}
+              >
                 Reserve & Contact
               </button>
             </div>
