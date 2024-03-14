@@ -6,7 +6,6 @@ import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import BookService from "../services/BookService";
 
-
 export const HomePage = () => {
   const [books, setBooks] = useState([]);
 
@@ -24,7 +23,6 @@ export const HomePage = () => {
 
   return (
     <>
-
       <Header />
       <main className="pb-20">
         <EyeCatcher />
@@ -42,13 +40,13 @@ export const HomePage = () => {
               title={book.title}
               typeTransaction={book.type_transaction}
               username={book.user.username}
+              id={book.id}
               key={book.id}
             />
           ))}
         </div>
       </main>
       <Footer />
-
     </>
-  )
-}
+  );
+};

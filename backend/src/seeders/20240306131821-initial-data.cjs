@@ -42,6 +42,7 @@ function addBooks(books) {
     userId: book.userId,
     type_transaction: book.typeTransaction,
     ISBN: book.ISBN,
+    description: book.description,
     createdAt: book.createdAt,
     updatedAt: book.updatedAt,
   }));
@@ -72,7 +73,6 @@ function setAllUsers() {
       .replace(/\s/g, "")
       .toLowerCase();
     allUsers.push({
-      id: i,
       email: email,
       password: bcrypt.hashSync("test"),
       username: firstName,
@@ -96,6 +96,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1954-07-29"),
+      description:
+        "Un épico relato de aventuras que sigue a un pequeño hobbit llamado Frodo Bolsón en su búsqueda para destruir un anillo maligno y salvar a la Tierra Media del malvado Señor Oscuro Sauron.",
     },
     {
       title: "Cien años de soledad",
@@ -108,6 +110,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1967-05-30"),
+      description:
+        "Una saga familiar que sigue la historia de varias generaciones de la familia Buendía en el ficticio pueblo de Macondo, donde ocurren eventos surrealistas y mágicos.",
     },
     {
       title: "Harry Potter y la piedra filosofal",
@@ -120,6 +124,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1997-06-26"),
+      description:
+        "La primera entrega de la serie de libros de Harry Potter, que sigue las aventuras de un joven mago, Harry Potter, y sus amigos Hermione Granger y Ron Weasley, mientras asisten a la escuela de magia y hechicería de Hogwarts.",
     },
     {
       title: "1984",
@@ -132,6 +138,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1949-06-08"),
+      description:
+        "Una distopía clásica que sigue la historia de Winston Smith, un hombre que vive en un mundo totalitario gobernado por el omnipresente Gran Hermano.",
     },
     {
       title: "Orgullo y prejuicio",
@@ -144,6 +152,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1813-01-28"),
+      description:
+        "Una historia de amor clásica que sigue las vidas de las hermanas Bennet y su relación con varios caballeros de la sociedad británica del siglo XIX.",
     },
     {
       title: "Don Quijote de la Mancha",
@@ -156,6 +166,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1605-01-16"),
+      description:
+        "Una obra maestra de la literatura española que sigue las aventuras de un caballero llamado Don Quijote que se embarca en una serie de extravagantes y cómicas aventuras con su fiel escudero Sancho Panza.",
     },
     {
       title: "Matar un ruiseñor",
@@ -168,6 +180,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1960-07-11"),
+      description:
+        "Una novela que aborda temas de raza e injusticia en el sur de Estados Unidos durante la Gran Depresión, contada a través de los ojos de una niña llamada Scout Finch.",
     },
     {
       title: "Crónica de una muerte anunciada",
@@ -180,6 +194,8 @@ function setupData() {
       createdAt: new Date(),
       updatedAt: new Date(),
       date: new Date("1981-01-07"),
+      description:
+        "Una novela que explora los eventos que rodean el asesinato de un hombre en un pequeño pueblo latinoamericano, narrada desde diferentes perspectivas y con un sentido de inevitabilidad.",
     },
   ]);
 
