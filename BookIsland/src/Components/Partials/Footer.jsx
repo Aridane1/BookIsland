@@ -24,7 +24,7 @@ export const Footer = () => {
             />
           </NavLink>
         </li>
-        <li>
+        <li className=" bg-primary">
           <NavLink to="/home">
             <img
               src={location.pathname === "/home" ? ActiveHome : Home}
@@ -33,7 +33,7 @@ export const Footer = () => {
             />
           </NavLink>
         </li>
-        <li>
+        <li className=" bg-primary">
           <NavLink to="/user">
             <img
               src={location.pathname === "/user" ? ActiveProfile : Profile}
@@ -42,7 +42,7 @@ export const Footer = () => {
             />
           </NavLink>
         </li>
-        <li>
+        <li className=" bg-primary">
           <NavLink to="/Overview-chat">
             <img
               src={location.pathname === "/Overview-chat" ? ActiveChat : Chat}
