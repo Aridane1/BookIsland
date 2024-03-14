@@ -1,14 +1,12 @@
-
 import { Link, useNavigate } from "react-router-dom";
-
 
 import { backendImageEndpoint } from "../../constants/backend.enpoints";
 
 export const RecentlyUploaded = (book) => {
   const navigate = useNavigate();
 
-  const goToInformationOfBook = (id) => {
-    navigate(`/specific/${id}`);
+  const goToInformationOfBook = (bookId) => {
+    navigate(`/specific/${bookId}`);
   };
 
   return (
@@ -21,9 +19,7 @@ export const RecentlyUploaded = (book) => {
             className=" w-20 h-[120px] border border-dark"
           />
           <p
-
             className={`h-6 text-center mt-10 rounded text-[#F6FEFF] text-[11px] font-bold flex justify-center items-center ${
-
               book.typeTransaction === "swap" ? "bg-[#FFA800]" : "bg-[#06CC55]"
             }`}
           >
@@ -39,11 +35,14 @@ export const RecentlyUploaded = (book) => {
             {book.username}
           </h3>
 
-
-          <Link to="/specific" className="w-full h-[42px] bg-primary text-light rounded-lg text-center text-[22px] font-bold flex justify-center items-center">
-
+          <button
+            onClick={() => {
+              goToInformationOfBook(book.id);
+            }}
+            className="w-full h-[42px] bg-primary text-light rounded-lg text-center text-[22px] font-bold flex justify-center items-center"
+          >
             View
-          </Link>
+          </button>
         </div>
       </div>
       <hr className="relative w-full h-1 my-8 bg-dark border-0 rounded mt-[32px]"></hr>

@@ -43,6 +43,7 @@ export const HomePage = () => {
               typeTransaction={book.type_transaction}
               username={book.user.username}
               id={book.id}
+              userId={book.user.id}
               key={book.id}
             />
           ))}

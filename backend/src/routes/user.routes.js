@@ -15,7 +15,7 @@ import {
 const router = Router();
 
 router.get("/", isAuthenticated, findAllUser);
-router.get("/:userId", isAuthenticated, findOneUser);
+router.get("/:userId", findOneUser);
 router.post("/", createUser);
 router.put("/noImage/:userId", isAuthenticated, updateUser);
 router.delete("/:userId", isAuthenticated, deleteOneUser);

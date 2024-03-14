@@ -17,7 +17,7 @@ const app = express();
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 let corsOptions = {
-	origin: "*",
+  origin: "*",
 };
 
 app.use(express.static(path.join(__dirname, "..", "public")));

@@ -5,12 +5,12 @@ import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import BookService from "../services/BookService";
 import { backendImageEndpoint } from "../constants/backend.enpoints";
-import "../../src/global.css"
-
+import "../../src/global.css";
 
 export const SpecificPage = () => {
   const [book, setBook] = useState();
   const { bookId } = useParams();
+
   const navigate = useNavigate();
 
   const getBookById = async (id) => {
@@ -33,8 +33,8 @@ export const SpecificPage = () => {
     return `${day}/${month}/${year}`;
   };
 
-  const goToChat = (bookId) => {
-    navigate(`/specific-chat/${bookId}`);
+  const goToChat = (bookId, userId) => {
+    navigate(`/specific-chat/${bookId}/${userId}`);
   };
 
   useEffect(() => {
@@ -94,7 +94,7 @@ export const SpecificPage = () => {
             <div className="items-center">
               <button
                 className="h-[48px] bg-primary rounded-lg text-center text-light font-bold text-[22px] px-[16px] py[8px]"
-                onClick={() => goToChat(book.id)}
+                onClick={() => goToChat(book.id, book.userId)}
               >
                 Reserve & Contact
               </button>

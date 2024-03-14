@@ -15,7 +15,6 @@ export const createChatUser = async (req, res) => {
 export const createChatUserWithWs = async (data) => {
   try {
     const result = await ChatUser.create(data);
-
     if (!result) {
       return;
     }
@@ -51,7 +50,7 @@ export const getChatUserByInterestedAndChangingUser = async (req, res) => {
     });
 
     let combinedUsers = chatsUser.map((chat) => {
-      const combinedUser = { id: chat.id, user: {} };
+      const combinedUser = { id: chat.id, user: {}, book_id: chat.book_id };
 
       if (chat.interestedUser.id !== Number(userId)) {
         combinedUser.user = chat.interestedUser;
@@ -60,7 +59,6 @@ export const getChatUserByInterestedAndChangingUser = async (req, res) => {
       if (chat.changingUser.id !== Number(userId)) {
         combinedUser.user = chat.changingUser;
       }
-
       return combinedUser;
     });
     res.status(200).send(combinedUsers);

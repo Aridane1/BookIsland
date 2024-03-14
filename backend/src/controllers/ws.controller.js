@@ -11,51 +11,52 @@ let newMessage = {};
 export default function startWs(wss) {
   wsServer = wss;
   wsServer.on("connection", async (ws, incoming_request) => {
-    const url = new URLSearchParams(incoming_request.url);
+    const urlParams = incoming_request.url.split("?")[1];
+    const params = new URLSearchParams(urlParams);
 
-    const bookId = url.get("book_id");
-    const userId = url.get("interested_user");
-
-    let chat = null;
+    const bookId = params.get("book_id");
+    const userId = params.get("interested_user");
+    const userId2 = params.get("changing_user");
 
     const book = await Book.findOne({
       where: { id: bookId },
       include: { model: db.User },
     });
 
-    chat = await ChatUser.findOne({
+    let chat = await ChatUser.findAll({
       where: {
         [db.Sequelize.Op.or]: [
           {
             interested_user: userId,
-            changing_user: book.user.id,
+            changing_user: userId2,
             book_id: bookId,
           },
           {
-            interested_user: book.user.id,
+            interested_user: userId2,
             changing_user: userId,
             book_id: bookId,
           },
         ],
       },
     });
+
     let chatRef;
+
     if (!chats[bookId]) {
       chats[bookId] = [];
-      if (chat === null) {
-        let chatUser = {
+      if (chat.length === 0) {
+        console.log(Number(userId), Number(book.user.id), Number(bookId));
+        chat = await createChatUserWithWs({
           interested_user: Number(userId),
           changing_user: Number(book.user.id),
           book_id: Number(bookId),
           finish_chat: false,
-        };
-
-        chat = await createChatUserWithWs(chatUser);
+        });
+        chatRef = { ws, chatId: chat.id, userId };
+      } else {
         chatRef = { ws, chatId: chat.id, userId };
       }
     }
-
-    chats[bookId].push(chatRef);
 
     ws.on("message", (message) => {
       const parseMessage = JSON.parse(message);
@@ -70,7 +71,10 @@ export default function startWs(wss) {
 
         createMessage(newMessage).then(() => {
           newMessage.type = MESSAGES.NEW_MESSAGE;
-          chatRef.ws.send(JSON.stringify(newMessage));
+          console.log(newMessage);
+          chats[bookId].forEach((item) =>
+            item.ws?.send(JSON.stringify(newMessage))
+          );
         });
       }
 

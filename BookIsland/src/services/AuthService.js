@@ -26,4 +26,22 @@ async function login(user) {
   }
 }
 
-export default { login };
+async function logout() {
+  try {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function getOneUserById(userId) {
+  try {
+    const response = axios.get(`${backendAuthEnpoint}/${userId}`);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export default { login, getOneUserById, logout };
