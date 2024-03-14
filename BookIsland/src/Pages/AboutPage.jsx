@@ -1,6 +1,9 @@
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import TheTeamImage from "../../public/assets/Images/TheTeam.webp"
+import "../../src/global.css"
+
+import { Contact } from "../Components/Partials/Contact";
 
 export const AboutPage = () => {
   return (
@@ -49,6 +52,7 @@ export const AboutPage = () => {
             enthusiasm when it comes to figure out problems.
           </p>
         </div>
+        <Contact />
       </main>
 
       <Footer />

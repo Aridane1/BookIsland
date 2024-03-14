@@ -95,15 +95,18 @@ export const RegisterForm = () => {
           <FormInput type="password" placeholder="password again*" />
           <FormInput type="text" placeholder="favorite genre" />
           <FormInput type="textarea" placeholder="description" />
+
+          <div className="flex flex-col items-center">
           <button
-            className="bg-primary w-28 h-10 rounded-lg mb-3 text-light font-bold"
+            className="bg-primary w-28 h-10 rounded-lg mb-3 text-light font-bold items-center"
             id="inputField"
           >
             Submit
           </button>
-          <Link to="/login" className="block text-primary underline">
+          <Link to="/login" className="block text-primary underline items-center">
             cancel
           </Link>
+          </div>
         </form>
       </div>
     </>
