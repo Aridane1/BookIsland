@@ -7,8 +7,8 @@ export const Header = () => {
   return (
 
     <header className=" fixed  top-0 w-screen h-20 bg-primary flex justify-between items-center pl-4 z-10">
-
-      <img src={logo} alt="" className=" rounded-full " />
+      <Link to="/home" className=" bg-primary "><img src={logo} alt="" className=" rounded-full " /></Link>
+      
       <div className="flex justify-between items-center m- rounded-full bg-primary">
         <Link to="/faq"><img src={FAQ} alt="" className="bg-primary" /></Link>
         
