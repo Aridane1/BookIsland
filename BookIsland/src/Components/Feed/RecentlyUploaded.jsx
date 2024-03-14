@@ -20,7 +20,7 @@ export const RecentlyUploaded = (book) => {
             alt={book.title}
           />
           <p
-            className={`text-center mt-10 rounded text-secondary font-bold ${
+            className={`text-center mt-10 rounded text-[#F6FEFF] font-bold ${
               book.typeTransaction === "swap" ? "bg-[#FFA800]" : "bg-[#06CC55]"
             }`}
           >

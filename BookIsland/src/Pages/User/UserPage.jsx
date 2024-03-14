@@ -6,12 +6,13 @@ import TestPorfileImage from "/assets/Images/EyeCatcher.webp";
 import { UserUploadedBooks } from "../../Components/UserUploadedBooks";
 import { UserPendigBooks } from "../../Components/UserPendigBooks";
 import { UserClosedExhanges } from "../../Components/UserClosedExhanges";
+import "../../../src/global.css"
 
 export const UserPage = () => {
   return (
     <>
     <Header></Header>
-    <div className="flex  items-center justify-between  mx-4 my-6">
+    <div className="flex  items-center justify-between  mx-4 mt-[120px] mb-6">
       <img 
         src={TestPorfileImage} 
         alt="profile picture"
@@ -38,9 +39,9 @@ export const UserPage = () => {
         <Link to="/ " className=" my-6 text-primary text-[22px] font-bold underline">edit profile</Link>
 
     </div>
-    <div className="px-[18px]">
-          <p className="text-dark font-bold text-[32px] w-fit pt-2 ">Your books</p>
-          <hr className="relative -top-[30px] w-[84px] h-1 my-8 bg-dark border-0 rounded "></hr>
+    <div className="px-[16px] pb-8">
+          <p className="text-dark font-bold text-[32px] w-fit">Your books</p>
+          <hr className="w-[84px] h-1 mb-8 bg-dark border-0 rounded "></hr>
     </div>
     <AddABook></AddABook>
     <UserUploadedBooks></UserUploadedBooks>   

@@ -1,6 +1,8 @@
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import TheTeamImage from "../../public/assets/Images/TheTeam.webp"
+import "../../src/global.css"
+
 
 export const AboutPage = () => {
   return (
