@@ -1,5 +1,7 @@
 import { Footer } from "../Components/Partials/Footer"
 import { Header } from "../Components/Partials/Header"
+import "../../src/global.css"
+
 
 
 

@@ -21,7 +21,9 @@ export const RecentlyUploaded = (book) => {
             className=" w-20 h-[120px] border border-dark"
           />
           <p
+
             className={`h-6 text-center mt-10 rounded text-[#F6FEFF] text-[11px] font-bold flex justify-center items-center ${
+
               book.typeTransaction === "swap" ? "bg-[#FFA800]" : "bg-[#06CC55]"
             }`}
           >
