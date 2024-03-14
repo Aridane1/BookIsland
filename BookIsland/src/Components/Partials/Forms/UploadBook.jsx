@@ -14,7 +14,7 @@ export const UploadBookPicture = () => {
             <input 
                 type="file" 
                 id="inputFieldSmall"
-                className='w-[70px] ml-[11.5px] mb-[48px] file:p-4 file:rounded-lg file:border-none file:bg-primary file:text-light text-light'  
+                className='w-fit ml-[11.5px] mb-[48px] file:p-4 file:rounded-lg file:border-none file:bg-primary file:text-light text-light'  
                 />
                 <div className="ml-2">
             <ToggleSwitch></ToggleSwitch>
