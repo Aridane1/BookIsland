@@ -3,7 +3,6 @@
 
 
 *{
-
     background-color: #F6FEFF;
 }
 
@@ -32,7 +31,7 @@ body {
     font-size: 32px;
     color: #C9EEFA;
     animation-name: fontChange;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
 
 }
@@ -43,19 +42,42 @@ body {
         font-family: "Raleway", sans-serif;
     }
 
-    25% {
+    20% {
         font-family: "Amatic SC", sans-serif;
     }
 
-    50% {
+    40% {
         font-family: "Indie Flower", cursive;
     }
 
-    75% {
+    60% {
         font-family: "Playfair Display", serif;
     }
 
-    100% {
+    80% {
         font-family: "Podkova", serif;
     }
 }
+
+#Bounce {
+    animation-name: bounceIn ;
+    animation-duration: 2s; 
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  @keyframes bounceIn {
+    0% {
+   
+      transform: scale(.3);
+    }
+    50% {
+   
+      transform: scale(1.05);
+    }
+    70% { transform: scale(.9); }
+    100% { transform: scale(1); }
+  }
+  
+  

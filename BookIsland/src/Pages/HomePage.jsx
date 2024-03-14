@@ -5,6 +5,7 @@ import { RecentlyUploaded } from "../Components/Feed/RecentlyUploaded";
 import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import BookService from "../services/BookService";
+import { SearchBar } from "../Components/Feed/SearchBar";
 
 export const HomePage = () => {
   const [books, setBooks] = useState([]);
@@ -33,6 +34,7 @@ export const HomePage = () => {
           <hr className="relative -top-[30px] w-[84px] h-1 my-8 bg-dark border-0 rounded "></hr>
         </div>
         <AddABook />
+        <SearchBar />
         <div className="px-[18px]">
           {books.map((book) => (
             <RecentlyUploaded

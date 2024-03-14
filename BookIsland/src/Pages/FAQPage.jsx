@@ -1,5 +1,7 @@
 import { Footer } from "../Components/Partials/Footer"
 import { Header } from "../Components/Partials/Header"
+import "../../src/global.css"
+
 
 
 
@@ -17,7 +19,7 @@ export const FAQPage = () => {
         </div>
         
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             What’s the purpose of this App?
             </summary>
@@ -33,7 +35,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
         What is the price to use the App?
             </summary>
@@ -49,7 +51,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             How can I add my books?            
             </summary>
@@ -65,7 +67,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             Who is this App for?            
             </summary>
@@ -81,7 +83,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             Why a book I saw on the Home page disappeared?            
             </summary>
@@ -97,7 +99,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             How does the exchange works?            
             </summary>
@@ -113,7 +115,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             What is the meaning of life?            
             </summary>
@@ -129,7 +131,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             Who assassinated JFK?            
             </summary>
@@ -145,7 +147,7 @@ export const FAQPage = () => {
       </div>
 
       <div>
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             Why I can’t think of any relevant question? 
             </summary>
@@ -162,7 +164,7 @@ export const FAQPage = () => {
 
 
       <div className="pb-[104px]">
-          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4" open>
+          <details class="open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 open:shadow-lg rounded-lg px-1 pt-2 pb-8 my-4">
             <summary class="text-[22px] leading-6 text-primary dark:text-white font-bold select-none">
             Is it lunch already?            
             </summary>

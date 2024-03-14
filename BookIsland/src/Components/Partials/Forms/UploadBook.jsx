@@ -14,7 +14,7 @@ export const UploadBookPicture = () => {
             <input 
                 type="file" 
                 id="inputFieldSmall"
-                className='w-[70px] ml-[11.5px] mb-[48px] file:p-4 file:rounded-lg file:border-none file:bg-primary file:text-light text-light'  
+                className='w-fit ml-[11.5px] mb-[48px] file:p-4 file:rounded-lg file:border-none file:bg-primary file:text-light text-light'  
                 />
                 <div className="ml-2">
             <ToggleSwitch></ToggleSwitch>
@@ -25,31 +25,31 @@ export const UploadBookPicture = () => {
                 type="text" 
                 placeholder="title" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"  
+                className=" bg-secondary w-11/12 mb-4 pl-2"  
                 />
             <input 
                 type="text" 
                 placeholder="author" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"  
+                className=" bg-secondary w-11/12 mb-4 pl-2"  
             />
             <input 
                 type="text" 
                 placeholder="publisher" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"
+                className=" bg-secondary w-11/12 mb-4 pl-2"
                 />
             <input 
                 type="text" 
                 placeholder="publish date" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2"
+                className=" bg-secondary w-11/12 mb-4 pl-2"
                 />
             <input 
                 type="text" 
                 placeholder="ISBN-13" 
                 id="BookInputField" 
-                className=" bg-secondary mb-4 pl-2" 
+                className=" bg-secondary w-11/12 mb-4 pl-2" 
                 />
             <textarea  
                 rows="3"

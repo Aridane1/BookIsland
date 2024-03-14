@@ -5,6 +5,8 @@ import { Footer } from "../Components/Partials/Footer";
 import { Header } from "../Components/Partials/Header";
 import BookService from "../services/BookService";
 import { backendImageEndpoint } from "../constants/backend.enpoints";
+import "../../src/global.css"
+
 
 export const SpecificPage = () => {
   const [book, setBook] = useState();

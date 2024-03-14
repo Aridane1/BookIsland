@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import logo from "/assets/Logos/Light-blue-bagground.svg";
 import { useEffect } from "react";
+import "../../src/global.css"
 
 export const LandingPage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,9 @@ export const LandingPage = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div 
+      id="Bounce"
+      className="flex justify-center items-center h-screen">
       <img src={logo} alt="Logo" />
     </div>
   );

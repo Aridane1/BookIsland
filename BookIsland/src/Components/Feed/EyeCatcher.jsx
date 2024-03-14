@@ -15,7 +15,7 @@ export const EyeCatcher = () => {
         </span>
         <span
           id="changeText"
-          className="absolute top-[290px] bg-transparent text-white left-[250px]"
+          className="absolute w-20 top-[290px] left-[240px] bg-transparent text-white text-center"
         >
           New
         </span>
