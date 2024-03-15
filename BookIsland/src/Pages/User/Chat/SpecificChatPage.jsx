@@ -43,7 +43,6 @@ export const SpecificChatPage = () => {
 
     const messageWithUsername = JSON.stringify(parseMessage);
     if (ws.current && ws.current.readyState === WebSocket.OPEN) {
-      console.log("oee");
       ws.current.send(messageWithUsername);
     }
   };
@@ -59,6 +58,7 @@ export const SpecificChatPage = () => {
     ws.current.onmessage = (event) => {
       const message = JSON.parse(event.data);
       if (message.type === "newMessages") {
+        console.log("hola");
         setMessages((prevMessages) => [...prevMessages, message]);
       }
     };
