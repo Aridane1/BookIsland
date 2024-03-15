@@ -5,7 +5,6 @@ import { decodeToken } from "../utils/shared/globalFunctions";
 async function getAllChatsUserByUserId() {
   try {
     const user = decodeToken();
-    console.log(user);
     const response = axios.get(`${backendChatUserEndpoint}/${user.id}`);
     return response;
   } catch (err) {

@@ -44,4 +44,39 @@ async function getOneUserById(userId) {
   }
 }
 
-export default { login, getOneUserById, logout };
+async function createUserWithImage(user, blob) {
+  try {
+    let formData = new FormData();
+    formData.append("email", user.email);
+    formData.append("password", user.password);
+    formData.append("username", user.username);
+    formData.append("genre", user.genre ? user.genre : "");
+    formData.append("description", user.description ? user.description : "");
+    formData.append("file", blob);
+
+    const response = await axios.post(`${backendAuthEnpoint}`, formData);
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+async function createUser(user) {
+  try {
+    const response = axios.post(
+      `${backendAuthEnpoint}/no-image-to-add`,
+      { username: user.username },
+      getOptions(user)
+    );
+    return response;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export default {
+  login,
+  getOneUserById,
+  logout,
+  createUserWithImage,
+  createUser,
+};
