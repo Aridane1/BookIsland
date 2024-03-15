@@ -5,20 +5,25 @@ const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
   if (!token) return next();
 
-  if (req.headers.authorization.indexOf("Basic ") === 0) {
-    handleBasicAuth(req, next);
-  } else {
+  if (token.indexOf("Basic ") === 0) {
+    handleBasicAuth(req, res, next);
+  } else if (token.indexOf("Bearer ") === 0) {
     handleBearerToken(req, res, next, token);
+  } else {
+    return res.status(401).json({
+      error: true,
+      message: "Tipo de autenticación no compatible.",
+    });
   }
 };
 
-const handleBasicAuth = (req, next) => {
+const handleBasicAuth = (req, res, next) => {
   const base64Credentials = req.headers.authorization.split(" ")[1];
   const credentials = Buffer.from(base64Credentials, "base64").toString(
     "ascii"
   );
 
-  const [email, password] = credentials.split(":");
+  const [email, password, type] = credentials.split(":");
   req.body.email = email;
   req.body.password = password;
 

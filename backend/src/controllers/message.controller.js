@@ -1,9 +1,9 @@
 import { db } from "../models/index.js";
 const Message = db.Message;
 
-export const createMessage = (infoMessage) => {
+export const createMessage = async (infoMessage) => {
   try {
-    let message = Message.create(infoMessage);
+    let message = await Message.create(infoMessage);
     return;
   } catch (err) {
     return "Error creating the message";

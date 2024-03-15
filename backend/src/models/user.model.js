@@ -13,7 +13,10 @@ export default function createUserModel(sequelize, Sequelize) {
     description: {
       type: Sequelize.TEXT,
     },
-    gender: {
+    filename: {
+      type: Sequelize.STRING,
+    },
+    genre: {
       type: Sequelize.STRING,
     },
   });

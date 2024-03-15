@@ -17,15 +17,15 @@ const app = express();
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 let corsOptions = {
-	origin: "*",
+  origin: "*",
 };
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use(cors(corsOptions));
 
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use(verifyToken);
 
