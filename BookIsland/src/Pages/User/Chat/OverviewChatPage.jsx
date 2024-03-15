@@ -6,6 +6,7 @@ import { Header } from "../../../Components/Partials/Header";
 
 import ChatUserService from "../../../services/ChatUserService";
 import TestProfilImag from "/assets/Images/profilePictureTest.webp";
+import { backendImageEndpoint } from "../../../constants/backend.enpoints";
 
 export const OverviewChatPage = () => {
   const [chats, setChats] = useState([]);
@@ -102,7 +103,7 @@ export const OverviewChatPage = () => {
                   >
                     <div className=" col-span-1 ">
                       <img
-                        src={TestProfilImag}
+                        src={`${backendImageEndpoint}/${chat.user.filename}`}
                         alt="image of chat profile"
                         className=" w-16 h-16 aspect-square object-cover rounded-full flex items-center justify-center"
                       />

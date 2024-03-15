@@ -53,9 +53,10 @@ export default function startWs(wss) {
           finish_chat: false,
         });
         chatRef = { ws, chatId: chat.id, userId };
-      } else {
-        chatRef = { ws, chatId: chat.id, userId };
       }
+    }
+    if (!chatRef) {
+      chatRef = { ws, chatId: chat.id, userId };
     }
 
     ws.on("message", (message) => {
