@@ -59,6 +59,8 @@ export default function startWs(wss) {
       chatRef = { ws, chatId: chat.id, userId };
     }
 
+    chats[bookId].push(chatRef);
+
     ws.on("message", (message) => {
       const parseMessage = JSON.parse(message);
 
@@ -72,7 +74,6 @@ export default function startWs(wss) {
 
         createMessage(newMessage).then(() => {
           newMessage.type = MESSAGES.NEW_MESSAGE;
-          console.log(newMessage);
           chats[bookId].forEach((item) =>
             item.ws?.send(JSON.stringify(newMessage))
           );
